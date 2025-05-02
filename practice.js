@@ -1,15 +1,26 @@
-// function fib(n) {
-//   let arr = [0, 1];
+function binarySearch(arr, target) {
+  const sortedArr = arr.sort((a, b) => a - b);
+  console.log(sortedArr);
 
-//   if (n <= 1) {
-//     return 'error';
-//   }
+  let leftIndex = 0;
+  let rightIndex = arr.length - 1;
+  console.log(leftIndex, rightIndex);
 
-//   for (let i = 2; i < n; i++) {
-//     arr[i] = arr[i - 1] + arr[i - 2];
-//   }
+  while (leftIndex <= rightIndex) {
+    let middleIndex = Math.floor((leftIndex + rightIndex) / 2);
 
-//   return arr;
-// }
+    if (target === sortedArr[middleIndex]) {
+      return middleIndex;
+    }
 
-// console.log(fib(2));
+    if (target < sortedArr[middleIndex]) {
+      rightIndex = middleIndex - 1;
+    } else {
+      leftIndex = middleIndex + 1;
+    }
+  }
+
+  return -1;
+}
+
+console.log(binarySearch([5, -3, 8, 6, 9, 10, 2], -3)); // 4
