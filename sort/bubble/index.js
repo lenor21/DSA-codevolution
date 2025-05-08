@@ -1,5 +1,5 @@
 const arr = [20, -3, 4, 9, 1, 8, 7];
-console.log(arr);
+// console.log(arr);
 
 // do while outer loop
 function bubbleSort1(arr) {
@@ -40,9 +40,9 @@ function bubbleSort2(arr) {
 }
 
 bubbleSort1(arr);
-console.log(arr);
+// console.log(arr);
 
 bubbleSort2(arr);
-console.log(arr);
+// console.log(arr);
 
 // big O = O(n^2)

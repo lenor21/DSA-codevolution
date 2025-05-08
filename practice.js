@@ -1,25 +1,19 @@
-function binarySearch(arr, target) {
-  const sortedArr = arr.sort((a, b) => a - b);
-  console.log(sortedArr);
+// foobar
 
-  let leftIndex = 0;
-  let rightIndex = arr.length - 1;
-
-  while (leftIndex <= rightIndex) {
-    let middleIndex = Math.floor((leftIndex + rightIndex) / 2);
-
-    if (target === arr[middleIndex]) {
-      return middleIndex;
-    }
-
-    if (target < arr[middleIndex]) {
-      rightIndex = middleIndex - 1;
+function fooBar(n) {
+  for (let i = 1; i <= n; i++) {
+    if (i % 5 === 0 && i % 3 === 0) {
+      console.log('foobar');
+    } else if (i % 3 === 0) {
+      console.log('foo');
+    } else if (i % 5 === 0) {
+      console.log('bar');
     } else {
-      leftIndex = middleIndex + 1;
+      console.log(i);
     }
   }
-
-  return -1;
 }
 
-// console.log(binarySearch([-1, 5, 9, 3, 2, 4, 8], 4));
+fooBar(30);
+
+// console.log(fooBar(20));
