@@ -1,19 +1,14 @@
-// foobar
-
-function fooBar(n) {
-  for (let i = 1; i <= n; i++) {
-    if (i % 5 === 0 && i % 3 === 0) {
-      console.log('foobar');
-    } else if (i % 3 === 0) {
-      console.log('foo');
-    } else if (i % 5 === 0) {
-      console.log('bar');
-    } else {
-      console.log(i);
+function twoOfSum(nums, target) {
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = 0; j < nums.length; j++) {
+      console.log(i, j);
+      if (nums[i] + nums[j] === target) {
+        return [i, j];
+      }
     }
   }
+
+  return nums;
 }
 
-fooBar(30);
-
-// console.log(fooBar(20));
+console.log(twoOfSum([1, 1, 2, 7, 11, 15], 9));
