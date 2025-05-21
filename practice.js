@@ -1,23 +1,23 @@
-// const practiceArr = [20, 9, 2, 1, -40, 8, 6, 10, 5];
+const practiceArr = [20, 8, 1, 4, 2, -4, -9, 9, 10, 7];
 
-// function mergeSort(arr) {
-//   if (arr.length < 2) {
-//     return arr;
-//   }
+function quickSort(arr) {
+  if (arr.length < 2) {
+    return arr;
+  }
 
-//   const midIndex = Math.floor(arr.length / 2);
-//   let leftArr = [];
-//   let rightArr = [];
+  const pivot = arr[arr.length - 1];
+  let leftArr = [];
+  let rightArr = [];
 
-//   for (let i = 0; i < arr.length; i++) {
-//     if (midIndex > i) {
-//       leftArr.push(arr[i]);
-//     } else {
-//       rightArr.push(arr[i]);
-//     }
-//   }
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (pivot > arr[i]) {
+      leftArr.push(arr[i]);
+    } else {
+      rightArr.push(arr[i]);
+    }
+  }
 
-//   return [...mergeSort(leftArr), ...mergeSort(rightArr)];
-// }
+  return [...quickSort(leftArr), pivot, ...quickSort(rightArr)];
+}
 
-// console.log(mergeSort(practiceArr));
+// console.log(quickSort(practiceArr));
