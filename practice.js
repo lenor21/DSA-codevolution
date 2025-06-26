@@ -1,19 +1,24 @@
 const practiceArr = [20, 8, 1, 4, 2, -4, -9, 9, 10, 7];
 
-function bubblekSort(arr) {
-  const n = arr.length;
+function quickSort(arr) {
+  if (arr.length < 2) {
+    return arr;
+  }
 
-  for (let i = 0; i < n - 1; i++) {
-    for (let j = 0; j < n - 1 - i; j++) {
-      if (arr[j] > arr[j + 1]) {
-        let temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
-      }
+  const pivot = arr[arr.length - 1];
+
+  let leftArr = [];
+  let rightArr = [];
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (pivot < arr[i]) {
+      leftArr.push(arr[i]);
+    } else {
+      rightArr.push(arr[i]);
     }
   }
 
-  return arr;
+  return [...quickSort(leftArr), pivot, ...quickSort(rightArr)];
 }
 
-console.log(bubblekSort(practiceArr));
+// console.log(quickSort(practiceArr));
